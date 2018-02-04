@@ -23,14 +23,9 @@ data_generator = datagen.flow(X_train, Y_train, batch_size=96)
 
 model = Sequential()
 model.add(Conv2D(64, (3,3), input_shape=(32,32,3), activation='relu'))
-#new
 model.add(Conv2D(128, (3,3), activation='relu'))
-
 model.add(MaxPool2D(pool_size=(2,2)))
-
-#new
 model.add(Dropout(0.3))
-
 model.add(Conv2D(64, (3,3), activation='relu'))
 model.add(Conv2D(128, (3,3), activation='relu'))
 model.add(MaxPool2D(2, 2))
